@@ -22,7 +22,7 @@ jobs:
       - name: Generate environment variables file
         run: node generate-vars.js "${{ secrets.ENV_VARIABLES }}"
       - name: Initialize Google Cloud SDK & Deploy
-        uses: andycr900/piki-backend@master
+        uses: google-github-actions/setup-gcloud@master
         with:
           gae_config_path: '../app.yaml'
           service_account: ${{ secrets.GCP_SA_KEY }}
