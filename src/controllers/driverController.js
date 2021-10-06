@@ -19,7 +19,7 @@ driverCtrl.get = async (req, res ) => {
         //     const c = drivers[i];
         //     c.name = c.name.replace(/\w\S*/g, (w) => (w.replace(/^\w/, (c) => c.toUpperCase())));
         // }
-        res.status(200).send("Hola");
+        res.status(200).json("Hola");
     } catch (error) {
         res.status(500).json({ error: error})
     }
