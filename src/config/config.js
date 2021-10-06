@@ -10,14 +10,14 @@ module.exports = {
   "test": {
     "username": "piki7",
     "password": "piki72020",
-    "database": "piki7_test",
+    "database": "piki7_development",
     "host": "192.241.155.75",
     "dialect": "mysql"
   },
   "production": {
     "username": "piki7",
     "password": "piki72020",
-    "database": "piki7_production",
+    "database": "piki7_development",
     "host": "192.241.155.75",
     "dialect": "mysql"
   }
