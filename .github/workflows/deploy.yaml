@@ -3,7 +3,7 @@ name: Piki7
 on:
   push:
     branches:
-      - dev
+      - master
 
 jobs:
   deploy:
@@ -22,7 +22,7 @@ jobs:
       - name: Generate environment variables file
         run: node generate-vars.js "${{ secrets.ENV_VARIABLES }}"
       - name: Initialize Google Cloud SDK & Deploy
-        uses: andycr900/piki-backend@dev
+        uses: andycr900/piki-backend@master
         with:
           gae_config_path: '../app.yaml'
           service_account: ${{ secrets.GCP_SA_KEY }}
