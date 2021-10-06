@@ -22,7 +22,6 @@ jobs:
       - name: Generate environment variables file
         run: node generate-vars.js "${{ secrets.ENV_VARIABLES }}"
       - name: Initialize Google Cloud SDK & Deploy
-        uses: etereo-io/deploy-gae-action@dev
         with:
           gae_config_path: './app-dev.yaml'
           service_account: ${{ secrets.GCP_SA_KEY }}
