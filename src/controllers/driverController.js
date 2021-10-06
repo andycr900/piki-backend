@@ -6,19 +6,23 @@ const driverCtrl = {};
 
 
 driverCtrl.get = async (req, res ) => {
-    const drivers = await db.driver.findAll({
-        where: {
-            status: 'true'
-        },
-        order: [
-            ['name', 'ASC']
-        ]
-    });
-    for (let i = 0; i < drivers.length; i++) {
-        const c = drivers[i];
-        c.name = c.name.replace(/\w\S*/g, (w) => (w.replace(/^\w/, (c) => c.toUpperCase())));
+    try {
+        const drivers = await db.driver.findAll({
+            where: {
+                status: 'true'
+            },
+            order: [
+                ['name', 'ASC']
+            ]
+        });
+        for (let i = 0; i < drivers.length; i++) {
+            const c = drivers[i];
+            c.name = c.name.replace(/\w\S*/g, (w) => (w.replace(/^\w/, (c) => c.toUpperCase())));
+        }
+        res.json(drivers);
+    } catch (error) {
+        res.status(500).json({ error: error})
     }
-    res.json(drivers);
 }
 
 driverCtrl.search = async (req, res ) => {
