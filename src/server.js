@@ -47,7 +47,7 @@ class Server {
     }
 
     routes() {
-        this.app.use( this.indexPath, require('./routes/indexRouter'));
+        this.app.use(require('./routes/indexRouter'));
         
     }
 
